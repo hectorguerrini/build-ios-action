@@ -1,0 +1,60 @@
+name: "iOS Build/Release Action"
+author: "hectorguerrini"
+branding:  
+  color: 'green'
+description: "Build iOS project (.xcodeproj, .xcworkspace) and export .ipa"
+inputs:
+  project-path:
+    description: "Project path"
+    required: true
+  p12-base64:
+    description: "Base64 encoded p12 file (key + cert)"
+    required: true
+  mobileprovision-base64:
+    description: "Base64 encoded mobileprovision file"
+    required: true
+  code-signing-identity:
+    description: "For example, iOS Distribution"
+    required: true
+  team-id:
+    description: "Team id"
+    required: true
+  workspace-path:
+    description: "Workspace path"
+    required: false
+    default: ""
+  export-method:
+    description: "Options app-store, ad-hoc, package, enterprise, development, or developer-id"
+    required: false
+    default: "development"
+  configuration:
+    description: "For example, Debug, Release"
+    required: false
+    default: "Release"
+  certificate-password:
+    description: "Certificate password"
+    required: false
+    default: ""
+  output-path:
+    description: "Output path of ipa"
+    required: false
+    default: "output.ipa"
+  scheme:
+    description: "Scheme"
+    required: false
+    default: ""
+  disable-targets:
+    description: "Targets to disable automatic code signing. Input targets separated by ,. For example, 'MyApp,YourApp'."
+    required: false
+    default: ""
+  build-pods:
+    description: "Boolean to tell if `pod install` should be run during build."
+    required: false
+    default: false
+  pods-path:
+    description: "The path to the Podfile."
+    required: false
+    default: "Podfile"
+runs:
+  using: "node12"
+  main: "dist/index.js"
