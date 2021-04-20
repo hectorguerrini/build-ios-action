@@ -14,7 +14,7 @@ cp -r ${script_path}/Gemfile ./
 echo $P12_BASE64 | base64 --decode > ios-build.p12
 echo $MOBILEPROVISION_BASE64 | base64 --decode > ios-build.mobileprovision
 
-if [[$BUILD_PODS = true ]]; then
+if $BUILD_PODS = true ; then
     bundle install
 fi
 
