@@ -1,6 +1,7 @@
 name: "iOS Build/Release Action"
 author: "hectorguerrini"
 branding:  
+  icon: 'smartphone'
   color: 'green'
 description: "Build iOS project (.xcodeproj, .xcworkspace) and export .ipa"
 inputs:
