@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bundle": "ncc build index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hector Guerrini Herrera",
@@ -12,5 +13,8 @@
     "@actions/core": "^1.2.7",
     "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.3"
   }
 }
